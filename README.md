@@ -19,32 +19,40 @@ In every educational institution, effective coordination of numerous student com
 ### Venue Availability
 - Committees should be able to check when rooms and venues are available to avoid event overlap.
 
-## How to Use FestFrenzy
+## Dependencies
 
-1. **Event Setup**
-   - Log in to FestFrenzy with your credentials.
-   - Navigate to the event setup section.
-   - Provide details about the event, including its name, date, time, venue, and description.
-   - Select the relevant committees and departments for approval.
-   - Submit the event for approval.
+- [Font Awesome](https://fontawesome.com/): Version 6.0.0-beta3
+- Modern web browser supporting HTML5, CSS3, and JavaScript
 
-2. **Approval Process**
-   - The event will be sent for approval to the designated authorities, including the Principal, the Dean of Student Affairs, the H.O.D, and the Faculty Mentor.
-   - Once approved, the event status will be updated, and you will be notified.
+## Setup Instructions
 
-3. **Student Participation**
-   - Students can view upcoming events on the FestFrenzy platform.
-   - They can register to participate in events that interest them and receive updates and reminders about upcoming events.
+1. Clone the repository to your local machine:
 
-4. **Venue Availability**
-   - Committees can check the availability of rooms and venues on the FestFrenzy platform.
-   - They can schedule events at available times to avoid conflicts.
+    ```bash
+    git clone https://github.com/your-username/festfrenzy.git
+    ```
+
+2. Open the project directory in your code editor.
+
+3. Ensure you have a stable internet connection to load external dependencies.
+
+## Usage
+
+1. Open the `index.html` file in a web browser.
+2. You will see the FestFrenzy web application with a navigation bar, welcome text, and three boxes representing faculty, students, and clubs.
+3. Click on the boxes to navigate to different sections of the application.
+4. Explore the functionality of managing faculty, student, and club accounts.
 
 ## Get Started
 
 To get started with FestFrenzy, [sign up](#) for an account and start managing college events more efficiently today!
 
 For any questions or support, please contact [support@festfrenzy.com](mailto:support@festfrenzy.com).
+
+## Known Issues
+
+- Event approval process may not function correctly in certain edge cases.
+- Venue availability check may not always reflect real-time changes in venue bookings.
 
 ## Contributors
 
@@ -53,4 +61,4 @@ For any questions or support, please contact [support@festfrenzy.com](mailto:sup
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
