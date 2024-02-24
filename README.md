@@ -42,7 +42,7 @@ In every educational institution, effective coordination of numerous student com
 
 ## Get Started
 
-To get started with FestFrenzy, [sign up](#) for an account and start managing your events more efficiently today!
+To get started with FestFrenzy, [sign up](#) for an account and start managing college events more efficiently today!
 
 For any questions or support, please contact [support@festfrenzy.com](mailto:support@festfrenzy.com).
 
