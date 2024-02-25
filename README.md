@@ -38,7 +38,7 @@ In every educational institution, effective coordination of numerous student com
 
 ## Usage
 
-1. Open the `index.html` file in a web browser.
+1. Open the `1stPage.html` file in a web browser.
 2. You will see the FestFrenzy web application with a navigation bar, welcome text, and three boxes representing faculty, students, and clubs.
 3. Click on the boxes to navigate to different sections of the application.
 4. Explore the functionality of managing faculty, student, and club accounts.
