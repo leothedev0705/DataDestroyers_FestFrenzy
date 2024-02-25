@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ8iH7cUEM694194n8zd7mkNs9bzUZhvoG7A&usqp=CAU'); /* Background image URL */
+            background-size: cover;
+            overflow: hidden; /* Hide overflow to prevent scrollbars */
+        }
+        .navbar {
+            background-color: rgba(0, 0, 0, 1); /* Semi-transparent black background */
+            padding: 10px 20px; /* Padding for the navigation bar */
+            width: 100%; /* Full width */
+            display: flex;
+            justify-content: space-between; /* Align items with space between */
+            align-items: center; /* Center items vertically */
+            position: fixed; /* Fixed position */
+            top: 0; /* Push the navbar to the top of the page */
+            z-index: 1000; /* Ensure the navbar stays on top */
+        }
+        .navbar h1 {
+            color: white;
+            font-size: 24px;
+            font-family: 'Poppins', sans-serif; /* Use Poppins font */
+            text-transform: uppercase; /* Convert to uppercase */
+            font-weight: 700; /* Use bold font weight */
+        }
+        .nav-button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin-left: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Add transition for smooth effect */
+            text-decoration: none; /* Remove underline */
+        }
+        .nav-button:hover {
+            background-color: #333; /* Lighter background color on hover */
+        }
+        .welcome-text {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            width: 100%;
+        }
+        .box-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px; /* Space between welcome text and boxes */
+        }
+        .box {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 40px;
+            background: #060c21; /* Dark blue background */
+            transition: .5s;
+            border-radius: 10px;
+            overflow: hidden; /* Hide overflow to prevent content overflowing */
+        }
+        .box:hover {
+            height: 400px;
+        }
+        .image-container {
+            width: 100%;
+            height: 50%; /* Half of the box height */
+            overflow: hidden; /* Hide overflow to prevent content overflowing */
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: opacity 0.5s ease; /* Smooth transition for opacity */
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0; /* Initially hide the image */
+        }
+        .box:hover .image-container img {
+            opacity: 1; /* Show the image on hover */
+        }
+        .content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%; /* Half of the box height */
+            background: rgba(0, 0, 0, .8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #fff;
+            text-align: center;
+            /* transition: .5s; / / Remove opacity transition */
+            opacity: 1; /* Initially show the text */
+        }
+        /* .box:hover .content {
+            opacity: 0;  Remove opacity transition */
+         
+        .content h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .content span {
+            font-size: 14px;
+        }
+        .content i {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        /* Glow animation */
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px 5px rgba(216, 45, 45, 0.8), 0 0 20px 10px rgba(255, 255, 255, 0.6), 0 0 30px 15px rgba(255, 255, 255, 0.4);
+            }
+            to {
+                box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8), 0 0 40px 20px rgba(255, 255, 255, 0.6), 0 0 60px 30px rgba(255, 255, 255, 0.4);
+            }
+        }
+        .box:hover {
+            animation: glow 2s ease-in-out infinite alternate; /* Apply glow animation on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>FESTFRENZY</h1>
+        <div>
+            <a href="1stPage.html" class="nav-button">Home</a>
+            <a href="about.html" class="nav-button">About</a>
+            <a href="contact.html" class="nav-button">Contact</a>
+        </div>
+    </div>
+    <div class="welcome-text">
+        <h2>Events Section for students!</h2>
+    </div>
+    <div class="box-container">
+        <a href="studcultural.html" class="box">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG11c2ljJTIwcGxheWluZ3xlbnwwfHwwfHx8MA%3D%3D">
+            </div>
+            <div class="content">
+               <i class="fa-solid fa-newspaper"></i>
+                <h2>Cultural</h2>
+                <span>Enroll in upcoming cultural Events</span>
+            </div>
+        </a>
+        <a href="studsports.html" class="box">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1593786930094-d5c8164ac771?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHZhbG9yYW50JTIwZ2FtZSUyMGdyYXBoaWNzfGVufDB8fDB8fHww" alt="Student Image">
+            </div>
+            <div class="content">
+                <i class="fa-solid fa-person-biking"></i>
+                <h2>Sports</h2>
+                <span>Enroll in Sports Events and Tournaments</span>
+            </div>
+        </a>
+        <a href="studtechnical.html" class="box">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1486572788966-cfd3df1f5b42?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHZhbG9yYW50JTIwZ2FtZSUyMGdyYXBoaWNzfGVufDB8fDB8fHww" alt="Clubs Image">
+            </div>
+            <div class="content">
+                <i class="fa-solid fa-gears"></i>
+                <h2>Technical</h2>
+                <span>Enroll in upcoming Technical Fests and Hackathons</span>
+            </div>
+        </a>
+        <a href="studclubsevent.html" class="box">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGNsdWIlMjBldmVudHN8ZW58MHx8MHx8fDA%3D" alt="Club Events Image">
+            </div>
+            <div class="content">
+                <i class="fa-solid fa-gears"></i>
+                <h2>Club Events</h2>
+                <span>Explore upcoming club events</span>
+            </div>
+        </a>
+    </div>
+</body>
+</html>

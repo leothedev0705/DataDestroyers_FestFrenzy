@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://plus.unsplash.com/premium_photo-1661288463906-884f3550b103?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2x1YiUyMGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D'); /* Background image URL */
+            background-size: cover;
+        }
+        .container {
+            width: 80%;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #060c21;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar h1 {
+            color: white;
+            font-size: 24px;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .nav-button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin-left: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        .nav-button:hover {
+            background-color: #333;
+        }
+        .register-button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        .register-button:hover {
+            background-color: #0a7d00;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>FESTFRENZY</h1>
+        <div>
+            <a href="1stPage.html" class="nav-button">Home</a>
+            <a href="about.html" class="nav-button">About</a>
+            <a href="contact.html" class="nav-button">Contact</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2 style="color: black;">Upcoming Cultural Events</h2>
+        <table>
+            <tr>
+                <th>Event</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Register</th>
+            </tr>
+            <tr>
+                <td>Music Concert</td>
+                <td>Enjoy live performances by renowned artists and bands.</td>
+                <td>March 18, 2024</td>
+                <td>7:00 PM - 11:00 PM</td>
+                <td><a href="registration_page.html" class="register-button">Register</a></td>
+            </tr>
+            <tr>
+                <td>Dance Competition</td>
+                <td>Showcase your dance skills and compete for exciting prizes.</td>
+                <td>March 22, 2024</td>
+                <td>5:00 PM - 9:00 PM</td>
+                <td><a href="registration_page.html" class="register-button">Register</a></td>
+            </tr>
+            <tr>
+                <td>Art Exhibition</td>
+                <td>Explore stunning artworks by talented artists from around the world.</td>
+                <td>April 3-5, 2024</td>
+                <td>10:00 AM - 6:00 PM</td>
+                <td><a href="registration_page.html" class="register-button">Register</a></td>
+            </tr>
+            <!-- Add more cultural events -->
+        </table>
+    </div>
+</body>
+</html>

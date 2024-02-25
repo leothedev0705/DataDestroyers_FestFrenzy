@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About FestFrenzy</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&fm=jpg&w=1920&fit=max');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .highlight {
+            color: #008080;
+            font-weight: bold;
+        }
+        .list-item {
+            list-style-type: none;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .list-item i {
+            margin-right: 10px;
+            color: #008080;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 50px;
+        }
+        /* Navigation bar styles */
+        .navbar {
+            background-color: black; /* Set background color to black */
+            text-align: left;
+            padding: 10px 20px; /* Adjusted padding */
+            height: 64px; /* Set nav bar height to 64px */
+            display: flex;
+            align-items: center;
+            color: #fff; /* White text color */
+            position: fixed; /* Fixed position */
+            width: 100%; /* Full width */
+            top: 0; /* Align to top */
+            z-index: 1000; /* Ensure it's on top */
+        }
+
+        .navbar h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: bold; /* Make FESTFRENZY bold */
+            color: #fff; /* White color */
+            margin: 0; /* Remove default margin */
+        }
+
+        .navbar div {
+            margin-left: auto; /* Push other links to the right */
+        }
+
+        .navbar a.nav-button {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            padding: 8px 16px;
+            margin-left: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a.nav-button:hover {
+            background-color: #333; /* Lighter color on hover */
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <h1>FESTFRENZY</h1>
+        <div>
+            <a href="1stPage.html" class="nav-button">Home</a>
+            <a href="about.html" class="nav-button">About</a>
+            <a href="contact.html" class="nav-button">Contact</a>
+        </div>
+    </header>
+    <div class="container">
+        <h1>About FestFrenzy</h1>
+        <p>FestFrenzy is a comprehensive event management system designed to streamline and simplify the organization and coordination of events within educational institutions.</p>
+        <p>In every educational institution, the effective coordination of numerous student committees, spanning technical, cultural, and social domains, is essential. However, conducting events within these committees presents a complex challenge. It involves navigating through approval processes across different departments and authorities, securing venue permissions, and ensuring seamless scheduling that avoids conflicts with other events and lectures.</p>
+        <p>Consider the scenario of the Agnethon. To proceed, approvals from the Principal, the Dean of Student Affairs, the Head of Department (H.O.D), and our Faculty Mentor are essential. This all should be possible from a single platform.</p>
+        <h2>Key Features</h2>
+        <ul>
+            <li class="list-item"><i class="fas fa-check"></i> <span class="highlight">Event Setup and Approval:</span> Different committees need a way to set up events and get approvals from the right college departments.</li>
+            <li class="list-item"><i class="fas fa-check"></i> <span class="highlight">Student Participation:</span> Students should also have a way to join in on these events and stay in the loop about what's happening on campus.</li>
+            <li class="list-item"><i class="fas fa-check"></i> <span class="highlight">Venue Availability:</span> Committees should be able to check out when rooms and venues are available so that events don't accidentally overlap.</li>
+        </ul>
+        <h2>Our Mission</h2>
+        <p>At FestFrenzy, our mission is to revolutionize event management in educational institutions by providing a user-friendly, efficient, and centralized platform that empowers students, faculty, and administrators to create memorable and successful events.</p>
+        <h2>Our Team</h2>
+        <p>FestFrenzy is developed and maintained by a dedicated team of professionals passionate about enhancing the event management experience in educational settings.</p>
+        <ul>
+            <li class="list-item"><i class="fas fa-user"></i> Leonardo D'Souza - Web Developer</li>
+            <li class="list-item"><i class="fas fa-user"></i> Luziana D'Mello - UI/UX Designer</li>
+        </ul>
+    </div>
+    <footer class="footer">
+        &copy; 2024 FestFrenzy. All rights reserved.
+    </footer>
+</body>
+</html>

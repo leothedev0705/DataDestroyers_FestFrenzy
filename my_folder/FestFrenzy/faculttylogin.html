@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FestFrenzy Teacher Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%; 
+            margin: 0; 
+        }
+        .bg-image {
+            /* The image used */
+            background-image: url('https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* User-provided image */
+            
+            /* Full height */
+            height: 100%; 
+            
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+        }
+        .bg-overlay {
+            position: relative;
+            background: rgba(0, 0, 0, 0.5); /* Black see-through */
+            height: 100%;
+            display: flex;
+            justify-content: flex-start; /* Shift to the left */
+            align-items: center;
+            padding-left: 20px; /* Leave gap from the corner */
+        }
+        .login-panel {
+            background: white; /* White background */
+            padding: 1.5rem; /* Smaller padding */
+            border-radius: 2rem;
+            width: 100%;
+            max-width: 400px;
+            color: black; /* Black text color */
+            margin-top: 100px; /* Move below the navigation bar */
+        }
+        .login-panel h2, .login-panel p, .login-panel label, .login-panel input, .login-panel button {
+            font-family: 'Roboto', sans-serif;
+        }
+        .form-input {
+            background: rgba(200, 200, 200, 0.3);
+            border: none;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            width: 100%;
+            color: black; /* Input text color */
+        }
+        .action-button {
+            padding: 1rem;
+            border: none;
+            width: 100%;
+            border-radius: 0.5rem;
+            display: block; /* Ensure button spans the full width */
+            text-align: center; /* Center button text */
+            text-decoration: none; /* Remove default link underline */
+        }
+        .login-button {
+            background-color: black; /* Black button */
+            color: white; /* White text */
+        }
+        .login-button:hover {
+            background-color: #787878; /* Grey color on hover */
+        }
+        .sign-in-button {
+            background-color: #ccc; /* Grey button */
+            color: black; /* Black text */
+            margin-top: 1rem;
+        }
+        .sign-in-button:hover {
+            background-color: #333; /* Dark grey color on hover */
+        }
+
+        /* Modified styles for the navigation bar */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar h1 {
+            color: white;
+            font-size: 24px;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .navbar a.nav-button {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            padding: 8px 16px;
+            margin-left: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a.nav-button:hover {
+            background-color: #333; /* Lighter color on hover */
+        }
+
+        /* Flip only the background image */
+        .bg-image.flip {
+            transform: scaleX(-1);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>FESTFRENZY</h1>
+        <div>
+            <a href="1stPage.html" class="nav-button">Home</a>
+            <a href="about.html" class="nav-button">About</a>
+            <a href="contact.html" class="nav-button">Contact</a>
+        </div>
+    </div>
+    <div class="bg-overlay">
+        <div class="bg-image"></div>
+        <div class="login-panel shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">FACULTY LOGIN PAGE</h2> <!-- Changed to teacher login -->
+            <p class="mb-4">This is STRICTLY fo faculty members only!</p>
+            <div class="mb-6">
+                <label class="flex items-center"> <!-- Add margin bottom -->
+                    <i class="fas fa-id-card mr-2"></i> <!-- Icon for teacher's ID -->
+                    <input type="text" class="form-input" placeholder="Enter your Teacher's ID here"> <!-- Input field for Teacher's ID -->
+                </label>
+                <label class="flex items-center mb-2">
+                    <i class="fas fa-user mr-2"></i>
+                    <input type="email" class="form-input" placeholder="Enter your Email Address here">
+                </label>
+                <label class="flex items-center mb-2">
+                    <i class="fas fa-lock mr-2"></i>
+                    <input type="password" class="form-input" placeholder="Enter your password here">
+                </label>
+            </div>
+            <p class="text-sm mb-4">Having Trouble Logging in?</p>
+            <a href="facultydashb.html" class="action-button login-button mb-2">Log in</a> <!-- Redirect to login page -->
+            <p class="text-sm mb-4">Don't have an account yet?</p>
+            <a href="facultysignin.html" class="action-button sign-in-button">Sign up</a> <!-- Redirect to signup page -->
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to toggle the flip class on the background image
+        document.querySelector('.bg-image').classList.add('flip');
+    </script>
+</body>
+</html>

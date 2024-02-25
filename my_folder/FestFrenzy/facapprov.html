@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FestFrenzy Approval</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-200 font-sans">
+    <!-- Navigation bar -->
+    <nav class="bg-black text-white py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-2xl font-bold">FESTFRENZY</h1>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-gray-300">Home</a>
+                <a href="#" class="hover:text-gray-300">About</a>
+                <div class="dropdown relative">
+                    <a href="#" class="hover:text-gray-300">Events</a>
+                    <div class="dropdown-content absolute hidden bg-white shadow-lg rounded mt-2 py-1 w-32">
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Technical</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Sports</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Cultural</a>
+                    </div>
+                </div>
+                <a href="#" class="hover:text-gray-300">Approval</a>
+                <a href="#" class="hover:text-gray-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Approval content -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded shadow p-6">
+            <h2 class="text-3xl font-bold mb-4">Event Approval</h2>
+            <p class="mb-4">Below is the list of pending events awaiting approval:</p>
+            
+            <!-- Event 1 -->
+            <div class="border-t border-gray-300 py-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-bold">Event Name 1</h3>
+                    <div>
+                        <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mr-2">Approve</button>
+                        <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Reject</button>
+                    </div>
+                </div>
+                <p class="text-gray-600 mt-2">Event Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec leo elit.</p>
+                <p class="text-gray-600 mt-2">Department: Technical</p>
+                <p class="text-gray-600 mt-2">View Files Sent: <a href="#">View Files</a></p>
+                <p class="text-gray-600 mt-2">Event Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec leo elit.</p>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="border-t border-gray-300 py-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-bold">Event Name 2</h3>
+                    <div>
+                        <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mr-2">Approve</button>
+                        <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Reject</button>
+                    </div>
+                </div>
+                <p class="text-gray-600 mt-2">Event Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec leo elit.</p>
+                <p class="text-gray-600 mt-2">Department: Sports</p>
+                <p class="text-gray-600 mt-2">View Files Sent: <a href="#">View Files</a></p>
+                <p class="text-gray-600 mt-2">Event Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec leo elit.</p>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="border-t border-gray-300 py-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-bold">Event Name 3</h3>
+                    <div>
+                        <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mr-2">Approve</button>
+                        <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Reject</button>
+                    </div>
+                </div>
+                <p class="text-gray-600 mt-2">Event Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec leo elit.</p>
+                <p class="text-gray-600 mt-2">Department: Cultural</p>
+                <p class="text-gray-600 mt-2">View Files Sent: <a href="#">View Files</a></p>
+                <p class="text-gray-600 mt-2">Event Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec leo elit.</p>
+            </div>
+
+            <!-- Event 4 -->
+            <div class="border-t border-gray-300 py-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-bold">Event Name 4</h3>
+                    <div>
+                        <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mr-2">Approve</button>
+                        <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Reject</button>
+                    </div>
+                </div>
+                <p class="text-gray-600 mt-2">Event Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec leo elit.</p>
+                <p class="text-gray-600 mt-2">Department: Technical</p>
+                <p class="text-gray-600 mt-2">View Files Sent: <a href="#">View Files</a></p>
+                <p class="text-gray-600 mt-2">Event Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec leo elit.</p>
+            </div>
+
+            <!-- Event 5 -->
+            <div class="border-t border-gray-300 py-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-bold">Event Name 5</h3>
+                    <div>
+                        <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mr-2">Approve</button>
+                        <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Reject</button>
+                    </div>
+                </div>
+                <p class="text-gray-600 mt-2">Event Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec leo elit.</p>
+                <p class="text-gray-600 mt-2">Department: Sports</p>
+                <p class="text-gray-600 mt-2">View Files Sent: <a href="#">View Files</a></p>
+                <p class="text-gray-600 mt-2">Event Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec leo elit.</p>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

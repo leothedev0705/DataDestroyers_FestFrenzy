@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CSS -->
+    <style>
+        /* Your CSS styles here */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://plus.unsplash.com/premium_photo-1664304095595-e428558e8161?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2x1YiUyMGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D'); /* Background image URL */
+            background-size: cover;
+        }
+        .container {
+            width: 80%;
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #060c21;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar h1 {
+            color: white;
+            font-size: 24px;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .nav-button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin-left: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        .nav-button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Club Events</h1>
+        <div>
+            <a href="1stPage.html" class="nav-button">Home</a>
+            <a href="about.html" class="nav-button">About</a>
+            <a href="contact.html" class="nav-button">Contact</a>
+        </div>
+    </div>
+
+    <!-- Container for Club Events -->
+    <div class="container">
+        <h2 style="color: black;">Upcoming Events</h2>
+        <table>
+            <tr>
+                <th>Club</th>
+                <th>Event</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Register</th>
+            </tr>
+            <!-- Rhythm Club Event -->
+            <tr>
+                <td>Rhythm Club</td>
+                <td>Concert Night</td>
+                <td>A night filled with music and dance performances from talented artists.</td>
+                <td>March 10, 2024</td>
+                <td>7:00 PM - 10:00 PM</td>
+                <td><a href="register.html" class="nav-button">Register</a></td>
+            </tr>
+            <!-- Manthan Club Event -->
+            <tr>
+                <td>Manthan Club</td>
+                <td>Debate Competition</td>
+                <td>An opportunity for students to showcase their debating skills on various topics.</td>
+                <td>March 12, 2024</td>
+                <td>2:00 PM - 5:00 PM</td>
+                <td><a href="register.html" class="nav-button">Register</a></td>
+            </tr>
+            <!-- Drama Club Event -->
+            <tr>
+                <td>Drama Club</td>
+                <td>Stage Play: "The Odyssey"</td>
+                <td>A captivating theatrical adaptation of the classic Greek epic.</td>
+                <td>March 15-17, 2024</td>
+                <td>7:30 PM - 9:30 PM</td>
+                <td><a href="register.html" class="nav-button">Register</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

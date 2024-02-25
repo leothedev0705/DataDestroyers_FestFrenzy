@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FestFrenzy Clubs Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Background image and navbar styles */
+        body {
+            background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNsdWIlMjBldmVudHN8ZW58MHx8MHx8fDA%3D');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            margin-bottom: 40px; /* Add margin from bottom */
+        }
+
+        header {
+            background-color: black; /* Set background color to black */
+            text-align: left;
+            padding: 10px 20px; /* Adjusted padding */
+            height: 64px; /* Set nav bar height to 64px */
+            display: flex;
+            align-items: center;
+            color: #fff; /* White text color */
+        }
+
+        .festfrenzy {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: bold; /* Make FESTFRENZY bold */
+            margin-right: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            margin-right: 20px; /* Adjusted margin between nav links */
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #787878; /* Grey color on hover */
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-right: 20px; /* Adjusted margin between nav links */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-black text-white"> <!-- Set background to black -->
+        <h1 class="festfrenzy">FESTFRENZY</h1> <!-- Align to the left -->
+        <div class="nav-links">
+            <a href="1stPage.html">Home</a>
+            <a href="about.html">About</a>
+            <div class="dropdown">
+                <a href="#">Services <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="#">Service 1</a>
+                    <a href="#">Service 2</a>
+                    <a href="#">Service 3</a>
+                </div>
+            </div>
+            <a href="Clubapprov.html">Approval Req</a>
+            <a href="Eventsbooking.html">Create Event</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+</body>
+</html>

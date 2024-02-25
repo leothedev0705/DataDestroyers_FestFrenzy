@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/datepicker.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="C:\Users\Luziana\OneDrive\Desktop\AGNETHON\pages\hospital_online_appointment.css">
+
+    <style>
+        /* Navigation bar styles */
+        .navbar {
+            background-color: #000; /* Set background color to black */
+            color: #fff; /* White text color */
+            padding: 10px 20px; /* Adjusted padding */
+            display: flex;
+            align-items: center;
+            position: fixed; /* Fixed position at the top */
+            width: 100%; /* Full width */
+            top: 0; /* Position at the top */
+            z-index: 1000; /* Ensure it's above other content */
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: bold; /* Make FESTFRENZY bold */
+        }
+
+        .navbar .nav-links {
+            margin-left: auto;
+            display: flex;
+        }
+
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            background-color: #555; /* Lighter color on hover */
+        }
+
+        /* Adjust content padding to avoid being covered by the fixed navigation bar */
+        .content-wrapper {
+            padding-top: 84px; /* Adjusted padding top */
+        }
+
+        /* Adjust position of the booking event box */
+        .form-data {
+            margin-top: 80px; /* Move the box down */
+        }
+
+        /* Adjust position of the timePicker dropdown */
+        .dropdown-menu {
+            top: auto;
+            bottom: -80px; /* Adjust as needed */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <header class="navbar">
+        <h1>FESTFRENZY</h1>
+        <div class="nav-links">
+            <!-- Links for Approvals and Events -->
+            <a href="approval.html">Approval</a>
+            <!-- Links for Home, About, Contact -->
+            <a href="1stPage.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <!-- Content area -->
+    <div class="content-wrapper">
+        <div class="inner-layer">
+            <div class="container">
+                <div class="row no-margin">
+                    <div class="col-sm-7">
+                        <div class="content">
+                            <h1>Book Your Venue Now and Save Your Solts</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis at lacus at rhoncus. Integer pharetra lacus vitae sapien blandit eleifend.</p>
+                            <h2>For Help Call: +189-123-453</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-data">
+                            <div class="form-head">
+                                <h2>Book Event</h2>
+                            </div>
+                            <div class="form-body">
+                                <div class="row form-row">
+                                    <input type="text" placeholder="Enter Club Name" class="form-control">
+                                </div>
+                                <div class="row form-row">
+                                    <input type="text" placeholder="Enter Event Name" class="form-control">
+                                </div>
+                                <div class="row form-row">
+                                    <input type="text" placeholder="Enter Event Description" class="form-control" style="height: 150px;">
+                                </div>
+                                <div class="row form-row">
+                                    <input id="dat" type="text" placeholder="Event Date" class="form-control">
+                                </div>
+                                <h6>Venue Details</h6>
+                                <div class="row form-row">
+                                    <div class="col-sm-6">
+                                        <select class="form-control">
+                                            <option value="offline">Offline</option>
+                                            <option value="online">Online</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="Enter Building" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row form-row">
+                                    <div class="col-sm-6">
+                                        <select id="timePicker" class="form-control">
+                                            <option value="">Select Time</option>
+                                            <option value="01:00 AM">1:00 AM</option>
+                                            <option value="02:00 AM">2:00 AM</option>
+                                            <option value="03:00 AM">3:00 AM</option>
+                                            <option value="04:00 AM">4:00 AM</option>
+                                            <option value="05:00 AM">5:00 AM</option>
+                                            <option value="06:00 AM">6:00 AM</option>
+                                            <option value="07:00 AM">7:00 AM</option>
+                                            <option value="08:00 AM">8:00 AM</option>
+                                            <option value="09:00 AM">9:00 AM</option>
+                                            <option value="10:00 AM">10:00 AM</option>
+                                            <option value="11:00 AM">11:00 AM</option>
+                                            <option value="12:00 PM">12:00 PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="Room No" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row form-row">
+                                    <button class="btn btn-success btn-appointment">
+                                        Book Event
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-datepicker.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#dat").datepicker();
+        })
+    </script>
+</body>
+</html>

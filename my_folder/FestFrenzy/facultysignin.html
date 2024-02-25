@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FestFrenzy Teacher Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1558008258-3256797b43f3?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            margin-bottom: 40px; /* Add margin from bottom */
+        }
+
+        /* Add some custom styles to match the reference image */
+        .sign-up-card {
+            background-color: rgba(255, 255, 255, 0.4); /* Darker translucent background */
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px; /* Add some padding */
+            border: 2px solid #787878; /* Border color */
+            max-width: 400px; /* Limit width to maintain alignment */
+            margin-top: 40px; /* Add top margin */
+            margin-left: 20px; /* Shift to the left */
+        }
+
+        /* Black sign-up button */
+        .sign-up-btn {
+            background-color: #000;
+            color: #fff; /* White text color */
+            border-radius: 9999px; /* Rounded border */
+            transition: background-color 0.3s; /* Smooth transition */
+            display: block; /* Make it a block element */
+            width: 100%; /* Take full width */
+            padding: 1rem; /* Add padding */
+            text-align: center; /* Center text */
+            margin-top: 1rem; /* Add top margin */
+            text-decoration: none; /* Remove underline */
+        }
+
+        /* Change background color to grey on hover */
+        .sign-up-btn:hover {
+            background-color: #787878; /* Grey color */
+        }
+
+        /* Darker having trouble logging in text */
+        .trouble-login {
+            color: #000; /* Black color */
+        }
+
+        /* Navigation bar styles */
+        header {
+            background-color: black; /* Set background color to black */
+            text-align: left;
+            padding: 10px 20px; /* Adjusted padding */
+            height: 64px; /* Set nav bar height to 64px */
+            display: flex;
+            align-items: center;
+            color: #fff; /* White text color */
+        }
+
+        .navbar h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: bold; /* Make FESTFRENZY bold */
+            margin-right: auto;
+        }
+
+        .navbar a.nav-button {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            padding: 8px 16px;
+            margin-left: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a.nav-button:hover {
+            background-color: #333; /* Lighter color on hover */
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <h1>FESTFRENZY</h1>
+        <div>
+            <a href="1stPage.html" class="nav-button">Home</a>
+            <a href="about.html" class="nav-button">About</a>
+            <a href="contact.html" class="nav-button">Contact</a>
+        </div>
+    </header>
+    <div class="sign-up-card">
+        <h1 class="teacher-sign-up text-3xl font-bold mb-2">TEACHER SIGN UP</h1>
+        <p class="mb-6 text-gray-700"><b>This is for new Teachers only.</b></p>
+        <div class="space-y-4">
+            <input type="text" placeholder="Enter your Name here" class="w-full p-3 rounded text-lg">
+            <input type="email" placeholder="Enter your Email Address here" class="w-full p-3 rounded text-lg">
+            <div class="relative">
+                <i class="fas fa-venus-mars absolute text-lg" style="top: 10px; left: 10px;"></i>
+                <select class="pl-10 p-3 rounded text-lg w-48">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <input type="password" placeholder="Enter your password here" class="w-full p-3 rounded text-lg">
+            <input type="password" placeholder="Confirm your password here" class="w-full p-3 rounded text-lg">
+            <a href="signup_success.html" class="sign-up-btn font-bold">SIGN UP</a>
+        </div>
+    </div>
+</body>
+</html>
