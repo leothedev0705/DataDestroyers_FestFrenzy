@@ -56,7 +56,7 @@ For any questions or support, please contact [support@festfrenzy.com](mailto:sup
 
 ## Contributors
 
-- Leonardo D'Souza (@leothedev0705) - Developer
+- Leonardo D'Souza (@leothedev0705)https://github.com/leothedev0705/dv - Developer
 - Luziana D'Mello (@creativeluziana) - Designer and Developer
 
 ## License
