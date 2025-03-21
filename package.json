@@ -1,0 +1,25 @@
+{
+  "name": "studex",
+  "version": "1.0.0",
+  "description": "A kiosk-mode study timer application for students",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.1.2",
+    "chart.js": "^4.4.8",
+    "docx": "^8.5.0",
+    "dotenv": "^16.4.7",
+    "electron-store": "^8.1.0",
+    "googleapis": "^146.0.0",
+    "pptxgenjs": "^3.12.0",
+    "xlsx": "^0.18.5"
+  }
+}

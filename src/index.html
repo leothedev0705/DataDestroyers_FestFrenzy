@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StuDex - Study Session Manager</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        // Check authentication
+        window.addEventListener('load', () => {
+            const user = localStorage.getItem('user') || sessionStorage.getItem('user');
+            if (!user) {
+                window.location.href = 'login.html';
+            } else {
+                // Update user profile
+                const userData = JSON.parse(user);
+                document.getElementById('userName').textContent = userData.name;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Navigation Panel -->
+        <nav class="left-nav">
+            <div class="nav-header">
+                <div class="user-profile">
+                    <div class="profile-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#" class="nav-link active" data-section="dashboard">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-link" data-section="study-session">
+                    <i class="fas fa-clock"></i>
+                    <span>Study Session</span>
+                </a>
+                <a href="#" class="nav-link" data-section="youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+                <a href="#" class="nav-link" data-section="result-analysis">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Result Analysis</span>
+                </a>
+                <a href="#" class="nav-link" data-section="file-explorer">
+                    <i class="fas fa-folder"></i>
+                    <span>File Explorer</span>
+                </a>
+                <a href="#" class="nav-link" data-section="schedule">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Schedule</span>
+                </a>
+                <a href="#" class="nav-link" data-section="quizzes">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Quizzes</span>
+                </a>
+                <a href="#" class="nav-link" data-section="tools">
+                    <i class="fas fa-tools"></i>
+                    <span>Tools</span>
+                </a>
+            </div>
+
+            <div class="nav-footer">
+                <a href="#" class="nav-link" id="signOutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sign out</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="search-container">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="globalSearch" placeholder="Search here...">
+                       
+                    </div>
+                    <div class="search-results hidden">
+                        <!-- Search results will be populated here -->
+                    </div>
+                </div>
+                <div class="top-bar-actions">
+                    
+                    <button class="language-btn">
+                        <img src="assets/india-flag.png" alt="Language">
+                    </button>
+                    <button class="chat-btn">
+                        <i class="fas fa-comment-alt"></i>
+                    </button>
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="settings-btn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <div class="profile-dropdown">
+                        <button class="profile-btn">
+                            <img src="assets/profile-pic.png" alt="Profile">
+                            <span class="profile-name" id="profileName">John Doe</span>
+                        </button>
+                        <div class="dropdown-menu hidden">
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-user"></i>
+                                Profile
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item" id="signOutBtn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Sign out
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="content-sections">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="section active">
+                    <div class="dashboard-container">
+                        <div class="dashboard-main">
+                            <!-- Welcome Banner -->
+                            <div class="welcome-banner">
+                                <div class="welcome-text">
+                                    <h1>Welcome to StuDex</h1>
+                                    <p>Your personal student productivity dashboard</p>
+                                </div>
+                                <div class="welcome-image">
+                                    <img src="assets/welcome-illustration.png" alt="Student studying illustration">
+                                </div>
+                            </div>
+
+                            <!-- Dashboard Grid -->
+                            <div class="dashboard-grid">
+                                <div class="dashboard-card">
+                                    <h2>Quick Links</h2>
+                                    <!-- Quick links content -->
+                                </div>
+                                <div class="dashboard-card">
+                                    <h2>Recent Activity</h2>
+                                    <!-- Recent activity content -->
+                                </div>
+                                <div class="dashboard-card">
+                                    <h2>Upcoming Tasks</h2>
+                                    <!-- Tasks content -->
+                                </div>
+                                <div class="dashboard-card">
+                                    <h2>Statistics</h2>
+                                    <!-- Statistics content -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--right sidebar-->
+                        <div class="dashboard-right">
+                            <div class="digital-clock-container">
+                                <div id="clock">07:46:42</div>
+                                <div id="date">Friday, March 21, 2025</div>
+                            </div>
+                            <div class="calendar-card">
+                                <div class="calendar-header">
+                                    <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                                    <h2 id="currentMonth">March 2025</h2>
+                                    <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                                <div class="calendar-weekdays">
+                                    <div>Sun</div>
+                                    <div>Mon</div>
+                                    <div>Tue</div>
+                                    <div>Wed</div>
+                                    <div>Thu</div>
+                                    <div>Fri</div>
+                                    <div>Sat</div>
+                                </div>
+                                <div id="calendarDays" class="calendar-days">
+                                    <!-- Calendar days will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Study Session Section -->
+                <section id="study-session" class="section">
+                    <div class="app-container">
+                        <div id="dashboard" class="dashboard">
+                            <header>
+                                <div class="theme-toggle">
+                                    <button id="themeToggleBtn" class="theme-toggle-btn">
+                                        <i class="fas fa-moon"></i>
+                                    </button>
+                                </div>
+                                <h1><i class="fas fa-book-reader"></i> StuDex</h1>
+                                <p>Your Personal Study Session Manager</p>
+                            </header>
+                            
+                            <div class="session-setup">
+                                <h2>Set Up Your Study Session</h2>
+                                
+                                <div class="session-type">
+                                    <h3><i class="fas fa-tasks"></i> Choose Study Technique</h3>
+                                    <div class="session-options">
+                                        <div class="session-option" data-type="pomodoro" data-duration="120">
+                                            <div class="session-icon"><i class="fas fa-clock"></i></div>
+                                            <h4>Pomodoro Technique</h4>
+                                            <p>25 min work, 5 min break, repeat</p>
+                                            <span class="duration-badge">2 hours</span>
+                                        </div>
+                                        <div class="session-option" data-type="feynman" data-duration="90">
+                                            <div class="session-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                                            <h4>Feynman Technique</h4>
+                                            <p>Study, teach, identify gaps, simplify</p>
+                                            <span class="duration-badge">1.5 hours</span>
+                                        </div>
+                                        <div class="session-option" data-type="deep" data-duration="180">
+                                            <div class="session-icon"><i class="fas fa-brain"></i></div>
+                                            <h4>Deep Work</h4>
+                                            <p>Extended focused work without distractions</p>
+                                            <span class="duration-badge">3 hours</span>
+                                        </div>
+                                        <div class="session-option" data-type="custom" data-duration="60">
+                                            <div class="session-icon"><i class="fas fa-sliders-h"></i></div>
+                                            <h4>Custom Session</h4>
+                                            <p>Create your own study schedule</p>
+                                            <span class="duration-badge">Custom duration</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div id="customTimeSetup" class="time-setup hidden">
+                                    <h3><i class="fas fa-hourglass-half"></i> Custom Session Duration</h3>
+                                    <div class="time-slider-container">
+                                        <input type="range" id="timeSlider" min="30" max="420" step="5" value="60">
+                                        <div class="time-display">
+                                            <span id="timeValue">60</span> minutes
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- New Task Management Section -->
+                                <div class="task-manager">
+                                    <h3><i class="fas fa-tasks"></i> Session Tasks</h3>
+                                    <div class="task-input-container">
+                                        <input type="text" id="taskInput" placeholder="Add a task for this session">
+                                        <button id="addTaskBtn"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                    <ul id="taskList" class="task-list">
+                                        <!-- Tasks will be added here dynamically -->
+                                    </ul>
+                                </div>
+                                
+                                <div class="session-notes">
+                                    <h3><i class="fas fa-sticky-note"></i> Session Notes</h3>
+                                    <textarea id="sessionNotes" placeholder="What do you plan to accomplish in this session?"></textarea>
+                                </div>
+
+                                <!-- Ambient Sounds Section -->
+                                <div class="ambient-sounds">
+                                    <h3><i class="fas fa-music"></i> Ambient Sounds</h3>
+                                    <div class="sound-options">
+                                        <div class="sound-option" data-sound="none">
+                                            <i class="fas fa-volume-mute"></i>
+                                            <span>None</span>
+                                        </div>
+                                        <div class="sound-option" data-sound="rain">
+                                            <i class="fas fa-cloud-rain"></i>
+                                            <span>Rain</span>
+                                        </div>
+                                        <div class="sound-option" data-sound="cafe">
+                                            <i class="fas fa-coffee"></i>
+                                            <span>Cafe</span>
+                                        </div>
+                                        <div class="sound-option" data-sound="nature">
+                                            <i class="fas fa-tree"></i>
+                                            <span>Nature</span>
+                                        </div>
+                                        <div class="sound-option" data-sound="whitenoise">
+                                            <i class="fas fa-wave-square"></i>
+                                            <span>White Noise</span>
+                                        </div>
+                                    </div>
+                                    <div class="volume-control hidden">
+                                        <i class="fas fa-volume-down"></i>
+                                        <input type="range" id="volumeSlider" min="0" max="100" value="50">
+                                        <i class="fas fa-volume-up"></i>
+                                    </div>
+                                </div>
+                                
+                                <button id="startSessionBtn" class="primary-btn"><i class="fas fa-play"></i> Start Study Session</button>
+                            </div>
+
+                            <!-- Replace the existing statistics section with this enhanced dashboard -->
+                            <div class="dashboard-grid">
+                                <!-- Quick Stats Section -->
+                                <div class="dashboard-section stats-overview">
+                                    <h2><i class="fas fa-chart-line"></i> Quick Stats</h2>
+                                    <div class="stats-container">
+                                        <div class="stat-card">
+                                            <div class="stat-icon"><i class="fas fa-hourglass-half"></i></div>
+                                            <div class="stat-value" id="totalStudyTime">0</div>
+                                            <div class="stat-label">Total Study Hours</div>
+                                        </div>
+                                        <div class="stat-card">
+                                            <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                                            <div class="stat-value" id="sessionsCompleted">0</div>
+                                            <div class="stat-label">Sessions Completed</div>
+                                        </div>
+                                        <div class="stat-card">
+                                            <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                                            <div class="stat-value" id="achievementsEarned">0</div>
+                                            <div class="stat-label">Achievements</div>
+                                        </div>
+                                        <div class="stat-card">
+                                            <div class="stat-icon"><i class="fas fa-tasks"></i></div>
+                                            <div class="stat-value" id="tasksCompleted">0</div>
+                                            <div class="stat-label">Tasks Completed</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Weekly Progress Section -->
+                                <div class="dashboard-section weekly-progress">
+                                    <h2><i class="fas fa-calendar-week"></i> Weekly Progress</h2>
+                                    <div class="progress-chart">
+                                        <canvas id="weeklyProgressChart"></canvas>
+                                    </div>
+                                    <div class="weekly-stats">
+                                        <div class="weekly-stat">
+                                            <span class="label">This Week</span>
+                                            <span class="value" id="weeklyStudyTime">0h</span>
+                                        </div>
+                                        <div class="weekly-stat">
+                                            <span class="label">Daily Average</span>
+                                            <span class="value" id="dailyAverage">0h</span>
+                                        </div>
+                                        <div class="weekly-stat">
+                                            <span class="label">Best Day</span>
+                                            <span class="value" id="bestDay">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Subject Distribution Section -->
+                                <div class="dashboard-section subject-distribution">
+                                    <h2><i class="fas fa-book"></i> Subject Distribution</h2>
+                                    <div class="subject-chart">
+                                        <canvas id="subjectDistributionChart"></canvas>
+                                    </div>
+                                    <div class="subject-list" id="subjectList">
+                                        <!-- Subjects will be added dynamically -->
+                                    </div>
+                                    <button id="addSubjectBtn" class="secondary-btn">
+                                        <i class="fas fa-plus"></i> Add Subject
+                                    </button>
+                                </div>
+
+                                <!-- Goals Section -->
+                                <div class="dashboard-section goals">
+                                    <h2><i class="fas fa-bullseye"></i> Study Goals</h2>
+                                    <div class="goals-list" id="goalsList">
+                                        <!-- Goals will be added dynamically -->
+                                    </div>
+                                    <div class="goal-input">
+                                        <input type="text" id="goalInput" placeholder="Add a new study goal">
+                                        <button id="addGoalBtn" class="secondary-btn">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Recent Activity Section -->
+                                <div class="dashboard-section recent-activity">
+                                    <h2><i class="fas fa-history"></i> Recent Activity</h2>
+                                    <div class="activity-timeline" id="activityTimeline">
+                                        <!-- Activity items will be added dynamically -->
+                                    </div>
+                                </div>
+
+                                <!-- Focus Distribution Section -->
+                                <div class="dashboard-section focus-distribution">
+                                    <h2><i class="fas fa-clock"></i> Focus Distribution</h2>
+                                    <div class="focus-chart">
+                                        <canvas id="focusDistributionChart"></canvas>
+                                    </div>
+                                    <div class="focus-stats">
+                                        <div class="focus-stat">
+                                            <span class="label">Peak Hours</span>
+                                            <span class="value" id="peakHours">-</span>
+                                        </div>
+                                        <div class="focus-stat">
+                                            <span class="label">Best Technique</span>
+                                            <span class="value" id="bestTechnique">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Calendar View Section -->
+                                <div class="dashboard-section calendar-view">
+                                    <h2><i class="fas fa-calendar-alt"></i> Study Calendar</h2>
+                                    <div class="calendar-container" id="studyCalendar">
+                                        <!-- Calendar will be rendered here -->
+                                    </div>
+                                </div>
+
+                                <!-- Upcoming Sessions Section -->
+                                <div class="dashboard-section upcoming-sessions">
+                                    <h2><i class="fas fa-clock"></i> Scheduled Sessions</h2>
+                                    <div class="sessions-list" id="upcomingSessionsList">
+                                        <!-- Upcoming sessions will be added dynamically -->
+                                    </div>
+                                    <button id="scheduleSessionBtn" class="secondary-btn">
+                                        <i class="fas fa-plus"></i> Schedule Session
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="studySession" class="study-session hidden">
+                            <div class="timer-container">
+                                <div class="timer">
+                                    <div class="timer-display">
+                                        <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+                                    </div>
+                                    <div class="timer-label" id="timerLabel">Study Time</div>
+                                </div>
+                                
+                                <div class="session-controls">
+                                    <button id="pauseBtn" class="control-btn"><i class="fas fa-pause"></i> Pause</button>
+                                    <button id="resumeBtn" class="control-btn hidden"><i class="fas fa-play"></i> Resume</button>
+                                    <button id="endSessionBtn" class="control-btn danger"><i class="fas fa-stop"></i> End Session</button>
+                                </div>
+                            </div>
+                            
+                            <div class="session-info">
+                                <div class="session-type-display">
+                                    <i id="sessionTypeIcon" class="fas fa-clock"></i>
+                                    <span id="sessionTypeDisplay">Pomodoro Technique</span>
+                                </div>
+                                <div class="session-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" id="progressFill"></div>
+                                    </div>
+                                    <div class="progress-text" id="progressText">0%</div>
+                                </div>
+
+                                <!-- Task List in Study Mode -->
+                                <div class="session-tasks">
+                                    <h3><i class="fas fa-tasks"></i> Your Tasks:</h3>
+                                    <ul id="sessionTaskList" class="session-task-list">
+                                        <!-- Tasks will be shown here -->
+                                    </ul>
+                                </div>
+
+                                <div class="session-notes-display">
+                                    <h3><i class="fas fa-sticky-note"></i> Your Session Goals:</h3>
+                                    <div id="notesDisplay"></div>
+                                </div>
+                                
+                                <div id="pomodoroStatus" class="pomodoro-status hidden">
+                                    <h3><i class="fas fa-sync-alt"></i> Pomodoro Cycles</h3>
+                                    <div class="pomodoro-cycles" id="pomodoroCycles">
+                                        <!-- Cycles will be added dynamically -->
+                                    </div>
+                                </div>
+
+                                <!-- Sound Controls in Study Mode -->
+                                <div id="studyModeSound" class="study-mode-sound hidden">
+                                    <h3><i class="fas fa-music"></i> Background Sound</h3>
+                                    <div class="sound-controls">
+                                        <button id="soundToggleBtn" class="sound-btn"><i class="fas fa-pause"></i></button>
+                                        <input type="range" id="studyModeVolumeSlider" min="0" max="100" value="50">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="sessionComplete" class="session-complete hidden">
+                            <div class="completion-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h2>Session Complete!</h2>
+                            <div class="session-summary">
+                                <p>You studied for <span id="totalTime">0</span> minutes.</p>
+                                <p>Great job staying focused!</p>
+                                <div id="completedTasksContainer" class="completed-tasks">
+                                    <h3>Completed Tasks:</h3>
+                                    <ul id="completedTasksList">
+                                        <!-- Completed tasks will appear here -->
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Achievement Notification -->
+                            <div id="achievementContainer" class="achievement-container hidden">
+                                <div class="achievement">
+                                    <div class="achievement-icon">
+                                        <i id="achievementIcon" class="fas fa-trophy"></i>
+                                    </div>
+                                    <div class="achievement-info">
+                                        <h3>Achievement Unlocked!</h3>
+                                        <p id="achievementName">New Achievement</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button id="returnToDashboardBtn" class="primary-btn"><i class="fas fa-home"></i> Return to Dashboard</button>
+                        </div>
+
+                        <!-- Achievements Panel -->
+                        <div id="achievementsPanel" class="achievements-panel hidden">
+                            <div class="achievements-header">
+                                <h2><i class="fas fa-trophy"></i> Achievements</h2>
+                                <button id="closeAchievementsBtn" class="close-btn"><i class="fas fa-times"></i></button>
+                            </div>
+                            <div class="achievements-list" id="achievementsList">
+                                <!-- Achievements will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- YouTube Section -->
+                <section id="youtube" class="section">
+                    <div class="youtube-container">
+                        <div class="youtube-section-main">
+                            <div class="youtube-header">
+                                <h2><i class="fab fa-youtube"></i> Educational Content</h2>
+                                <p>Discover and organize your study materials</p>
+                            </div>
+                            
+                            <div class="video-search-container">
+                                <div class="video-search">
+                                    <i class="fas fa-search search-icon"></i>
+                                    <input type="text" placeholder="Search educational videos...">
+                                    <button class="search-button">Search</button>
+                                </div>
+                                <div class="video-filters">
+                                    <button class="filter-chip active">All</button>
+                                    <button class="filter-chip">Mathematics</button>
+                                    <button class="filter-chip">Science</button>
+                                    <button class="filter-chip">History</button>
+                                    <button class="filter-chip">Languages</button>
+                                </div>
+                            </div>
+
+                            <div class="content-wrapper">
+                                <div class="video-section">
+                                    <h3>Recommended Videos</h3>
+                                    <div class="video-grid">
+                                        <!-- Video cards will be loaded here -->
+                                    </div>
+                                </div>
+
+                                <div class="playlist-section">
+                                    <div class="playlist-header">
+                                        <h3>Your Study Playlists</h3>
+                                        <button class="new-playlist-btn">
+                                            <i class="fas fa-plus"></i> New Playlist
+                                        </button>
+                                    </div>
+                                    <div class="playlists-container">
+                                        <!-- Playlists will be loaded here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-right">
+                            <div class="digital-clock-container">
+                                <div id="clock">07:46:42</div>
+                                <div id="date">Friday, March 21, 2025</div>
+                            </div>
+                            <div class="calendar-card">
+                                <div class="calendar-header">
+                                    <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                                    <h2 id="currentMonth">March 2025</h2>
+                                    <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                                <div class="calendar-weekdays">
+                                    <div>Sun</div>
+                                    <div>Mon</div>
+                                    <div>Tue</div>
+                                    <div>Wed</div>
+                                    <div>Thu</div>
+                                    <div>Fri</div>
+                                    <div>Sat</div>
+                                </div>
+                                <div id="calendarDays" class="calendar-days">
+                                    <!-- Calendar days will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Result Analysis Section -->
+                <section id="result-analysis" class="section">
+                    <div class="analysis-container">
+                        <div class="analysis-main">
+                            <div class="grade-overview">
+                                <!-- Grade charts and statistics -->
+                            </div>
+                            <div class="performance-trends">
+                                <!-- Performance trend charts -->
+                            </div>
+                        </div>
+                        <div class="dashboard-right">
+                            <div class="digital-clock-container">
+                                <div id="clock">07:46:42</div>
+                                <div id="date">Friday, March 21, 2025</div>
+                            </div>
+                            <div class="calendar-card">
+                                <div class="calendar-header">
+                                    <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                                    <h2 id="currentMonth">March 2025</h2>
+                                    <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                                <div class="calendar-weekdays">
+                                    <div>Sun</div>
+                                    <div>Mon</div>
+                                    <div>Tue</div>
+                                    <div>Wed</div>
+                                    <div>Thu</div>
+                                    <div>Fri</div>
+                                    <div>Sat</div>
+                                </div>
+                                <div id="calendarDays" class="calendar-days">
+                                    <!-- Calendar days will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- File Explorer Section -->
+                <section id="file-explorer" class="section">
+                    <div class="explorer-container">
+                        <div class="file-tree">
+                            <!-- File/folder structure -->
+                        </div>
+                        <div class="file-preview">
+                            <!-- File preview area -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Schedule Section -->
+                <section id="schedule" class="section">
+                    <div class="schedule-container">
+                        <!-- Schedule calendar and events -->
+                    </div>
+                </section>
+
+                <!-- Quizzes Section -->
+                <section id="quizzes" class="section">
+                    <div class="quiz-container">
+                        <!-- Quiz interface -->
+                    </div>
+                </section>
+
+                <!-- Tools Section -->
+                <section id="tools" class="section">
+                    <div class="tools-container">
+                        <div class="tools-main">
+                            <div class="tools-grid">
+                                <div class="tool-card">
+                                    <i class="fas fa-file-powerpoint"></i>
+                                    <h3>PowerPoint</h3>
+                                </div>
+                                <div class="tool-card">
+                                    <i class="fas fa-file-word"></i>
+                                    <h3>Word</h3>
+                                </div>
+                                <div class="tool-card">
+                                    <i class="fas fa-file-excel"></i>
+                                    <h3>Excel</h3>
+                                </div>
+                                <!-- Add more tools as needed -->
+                            </div>
+                        </div>
+                        <div class="dashboard-right">
+                            <div class="digital-clock-container">
+                                <div id="clock">07:46:42</div>
+                                <div id="date">Friday, March 21, 2025</div>
+                            </div>
+                            <div class="calendar-card">
+                                <div class="calendar-header">
+                                    <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                                    <h2 id="currentMonth">March 2025</h2>
+                                    <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                                <div class="calendar-weekdays">
+                                    <div>Sun</div>
+                                    <div>Mon</div>
+                                    <div>Tue</div>
+                                    <div>Wed</div>
+                                    <div>Thu</div>
+                                    <div>Fri</div>
+                                    <div>Sat</div>
+                                </div>
+                                <div id="calendarDays" class="calendar-days">
+                                    <!-- Calendar days will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Add Subject Modal -->
+    <div id="subjectModal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Add New Subject</h3>
+            <div class="modal-form">
+                <div class="form-group">
+                    <label for="subjectName">Subject Name</label>
+                    <input type="text" id="subjectName" placeholder="Enter subject name">
+                </div>
+                <div class="form-group">
+                    <label for="subjectColor">Color</label>
+                    <input type="color" id="subjectColor" value="#3498db">
+                </div>
+                <div class="form-group">
+                    <label for="subjectGoal">Weekly Goal (hours)</label>
+                    <input type="number" id="subjectGoal" min="1" max="168" value="10">
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="cancelSubjectBtn" class="secondary-btn">Cancel</button>
+                <button id="saveSubjectBtn" class="primary-btn">Save Subject</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Session Modal -->
+    <div id="scheduleModal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Schedule Study Session</h3>
+            <div class="modal-form">
+                <div class="form-group">
+                    <label for="sessionDate">Date</label>
+                    <input type="date" id="sessionDate">
+                </div>
+                <div class="form-group">
+                    <label for="sessionTime">Time</label>
+                    <input type="time" id="sessionTime">
+                </div>
+                <div class="form-group">
+                    <label for="sessionSubject">Subject</label>
+                    <select id="sessionSubject">
+                        <!-- Subjects will be added dynamically -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sessionTechnique">Study Technique</label>
+                    <select id="sessionTechnique">
+                        <option value="pomodoro">Pomodoro Technique</option>
+                        <option value="feynman">Feynman Technique</option>
+                        <option value="deep">Deep Work</option>
+                        <option value="custom">Custom Session</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sessionDuration">Duration (minutes)</label>
+                    <input type="number" id="sessionDuration" min="30" max="420" value="60" step="30">
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="cancelScheduleBtn" class="secondary-btn">Cancel</button>
+                <button id="saveScheduleBtn" class="primary-btn">Schedule Session</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <h3>Educational Assistant</h3>
+            <button id="closeChat"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="message assistant">
+                <p>Hello! I'm your educational assistant. Ask me any educational questions!</p>
+            </div>
+        </div>
+        <div class="timer-container" id="timerContainer">
+            <p>Chat disabled for: <span id="timer">5:00</span></p>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Type your question here...">
+            <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/navigation.js"></script>
+    <script src="js/documentHandlers.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/components/dashboard.js"></script>
+    <script src="js/components/youtube.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html> 
